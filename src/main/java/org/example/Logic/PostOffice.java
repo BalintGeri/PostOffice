@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PostOffice {
-    private List<Mail> mails;
+    private final List<Mail> mails;
 
     public PostOffice() {
         this.mails = new ArrayList<>();
