@@ -2,6 +2,7 @@ package org.example.Logic;
 
 import org.example.Data.Mailtype;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,16 +17,16 @@ public class PostOffice {
         mails.add(mail);
     }
 
-    public void listAllMailOnGivenDate(String date) { //stream??
-        System.out.println("Mails posted on " + date + ": ");
+    public Mail listAllMailOnGivenDate(LocalDate date) {
         for (Mail mail : mails) {
-            if (mail.getDate().toString().equals(date)) {
-                System.out.println(mail);
+            if (mail.getDate().equals(date)) {
+                return mail;
             }
         }
+        return null;
     }
 
-    public double getRevenueForType(Mailtype type) { //stream??
+    public double getRevenueForType(Mailtype type) {
         double sum = 0;
         for (Mail mail : mails) {
             if (mail.getType() == type) {
